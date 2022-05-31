@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4862u-^fs&6-_!q0*#7m09!#c5qz)eykz-7ipbi4@mcc@y&6(q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["car-detection-atl.herokuapp.com"]
 
 
 # Application definition
