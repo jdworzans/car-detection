@@ -6,4 +6,4 @@ WORKDIR /web
 COPY requirements.txt /web/
 RUN pip install -r requirements.txt
 COPY . /web/
-ENTRYPOINT ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+ENTRYPOINT ["python", "manage.py", "runserver", "8000"]
