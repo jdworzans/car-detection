@@ -1,3 +1,6 @@
 build:
   docker:
     web: web/Dockerfile
+    torchserve: torchserve/Dockerfile
+run:
+  web: gunicorn -b :$PORT car_detection.wsgi
