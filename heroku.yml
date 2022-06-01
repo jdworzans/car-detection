@@ -1,4 +1,4 @@
 build:
   docker:
     web: web/Dockerfile
-    torchserve: pytorch/torchserve:0.6.0-cpu
+    torchserve: torchserve/Dockerfile
