@@ -30,6 +30,7 @@ ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', 'car-detection-atl.heroku
 # Application definition
 
 INSTALLED_APPS = [
+    'detection.apps.DetectionConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
