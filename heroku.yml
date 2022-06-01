@@ -1,5 +1,4 @@
 build:
   docker:
     web: web/Dockerfile
-run:
-  web: gunicorn car_detection.wsgi
+    torchserve: pytorch/torchserve:0.6.0-cpu
