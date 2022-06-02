@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: car-detection-service
+spec:
+  selector:
+    app: web
+  ports:
+    - name: web
+      protocol: TCP
+      port: 80
+      targetPort: 8000
+    - name: torchserve-inference
+      protocol: TCP
+      port: 8081
+      targetPort: 8081
+    - name: torchserve-management
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: LoadBalancer

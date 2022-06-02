@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: car-detection-deployment
+  labels:
+    app: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: web
+        image: europe-west6-docker.pkg.dev/car-detection-atl/car-detection-repo/car-detection-web:v2
+        ports:
+        - containerPort: 80
+        envFrom:
+        - secretRef:
+            name: car-detection-web-env
+      - name: torchserve
+        image: pytorch/torchserve:0.6.0-cpu
+        ports:
+        - containerPort: 8080
+        - containerPort: 8081
+        - containerPort: 8082

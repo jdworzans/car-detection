@@ -1,4 +1,5 @@
 import base64
+import os
 from io import BytesIO
 from urllib.error import HTTPError
 
@@ -20,7 +21,7 @@ def index(request):
     if request.method == "POST":
         form = forms.UploadImageForm(request.POST, request.FILES)
         if form.is_valid():
-            r = requests.get("http://torchserve:8080/predictions/fastrcnn", data=request.FILES['file'])
+            r = requests.get(os.environ["PREDICTION_ADRESS"], data=request.FILES['file'])
             if r.ok:
                 results = r.json()
                 img = Image.open(request.FILES['file'])
