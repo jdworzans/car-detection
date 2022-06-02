@@ -3,7 +3,6 @@ version: "3.9"
 services:
   web:
     build: ./web
-    command: bash -c "python manage.py makemigrations detection && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn -b :8000 car_detection.wsgi"
     volumes:
       - ./web:/web
     ports:
