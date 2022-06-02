@@ -15,3 +15,11 @@ curl -X POST  "http://localhost:8081/models?url=https://torchserve.pytorch.org/m
 You can explore pretrained models from [TorchServe Model ZOO](https://pytorch.org/serve/model_zoo.html)
 or export `.mar` file from selected model according to
 [TorchServe docs](https://pytorch.org/serve/index.html).
+
+# Run on Kubernetes
+`deployment.yml` and `service.yml` files are prepared
+for development within GKE (Google Kubernetes Engine).
+Created pods need secrets, which you can add using `.env` file based on `.env.example`.
+Remember to set `$DJANGO_ALLOWED_HOST`.
+
+Continue as in local run by adding model for object detection.
